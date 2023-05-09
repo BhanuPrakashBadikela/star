@@ -14,7 +14,7 @@
     const decrBtn = document.getElementById("decrBtn");
 
     function updateCount() {
-        fetch("http://your_ec2_instance_ip_here:8080/get")
+        fetch("http://10.12.1.229:8080/get")
         .then(response => response.json())
         .then(data => {
             countElem.innerText = data.count;
@@ -22,12 +22,12 @@
     }
 
     function increaseCount() {
-        fetch("http://your_ec2_instance_ip_here:8080/incr", {method: 'POST'})
+        fetch("http://10.12.1.229:8080/incr", {method: 'POST'})
         .then(() => updateCount());
     }
 
     function decreaseCount() {
-        fetch("http://your_ec2_instance_ip_here:8080/decr", {method: 'POST'})
+        fetch("http://10.12.1.229:8080/decr", {method: 'POST'})
         .then(() => updateCount());
     }
 
